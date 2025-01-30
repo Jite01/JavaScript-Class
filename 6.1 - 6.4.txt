@@ -1,0 +1,77 @@
+//6.1
+function getPentagonalNumber() {
+	let result = ''
+	for(let n = 1; n <= 100; n++) {
+		let pentagonal =	n *((3 * n) - 1)/2
+		result += pentagonal + ','		
+		
+	if (n % 10 == 0) {
+		console.log(` ${result}`)
+		result = ` 
+`
+		}
+	}
+}
+getPentagonalNumber();
+
+//6.2
+function sumDigits (n) {
+	let length = n.toString().length
+	 let divisorBuilder = 1
+	 for (let x = 0; x < length - 1; x++) divisorBuilder  += '0'
+	
+	divisor =  Number(divisorBuilder)
+	let sum = 0;
+
+	for (let x = divisor; divisor >= 1; divisor = Math.floor(divisor / 10)) {
+	
+	let result = Math.floor(n / divisor);
+	let lastDigit = result % 10;
+	sum += lastDigit;
+	
+    }
+    	console.log(sum)
+	return sum;
+}
+sumDigits(12345786)
+
+//6.3(a) & 6.4
+function reverse(n) {
+	let length = n.toString().length
+	 let divisorBuilder = 1
+	 for (let x = 0; x < length - 1; x++) divisorBuilder  += '0'
+	
+	divisor =  Number(divisorBuilder)
+	let reverse = ''
+
+	for (let x = 1; x <= divisor ; x = x * 10) {
+	
+	let result = Math.floor(n / x);
+	let lastDigit = result % 10;
+	reverse += lastDigit.toString();
+		}
+	console.log(reverse)
+	}
+
+	reverse(123456789)
+
+//6.3(b)
+function  isPalindrome(n) {
+	let length = n.toString().length
+	 let divisorBuilder = 1
+	 for (let x = 0; x < length - 1; x++) divisorBuilder  += '0'
+	
+	divisor =  Number(divisorBuilder)
+	let reverse = ''
+
+	for (let x = 1; x <= divisor ; x = x * 10) {
+	
+	let result = Math.floor(n / x);
+	let lastDigit = result % 10;
+	reverse += lastDigit.toString();
+		}
+	
+	return (Number(reverse)) === n;
+	}
+
+	console.log(isPalindrome(123454321))
